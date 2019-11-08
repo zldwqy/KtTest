@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kttest.databinding.FragmentABinding
 
 class FragmentA : Fragment() {
-    val TAG : String = "FragmentA";
+    val TAG : String = FragmentA ::class.java.name
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 
 class ProductViewModel : ViewModel() {
 
-    val TAG : String = "ProductViewModel";
+    val TAG : String =  ProductViewModel ::class.java.name
     val CONTENT : String = "ABCDEFGHIJKLMNOPQ";
     var mProducts: MutableLiveData<MutableList<Product>> = MutableLiveData<MutableList<Product>>()
 

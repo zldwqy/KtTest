@@ -14,7 +14,8 @@ class CartAdapter : ListAdapter<Product,CartAdapter.Holder>(CartDiff()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         Log.d(TAG,"onCreateViewHolder")
-        var databinding : ItemCartBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),R.layout.item_cart,parent,false)
+        var databinding : ItemCartBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+            R.layout.item_cart,parent,false)
         return Holder(databinding)
     }
 
