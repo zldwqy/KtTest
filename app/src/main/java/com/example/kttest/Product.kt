@@ -11,6 +11,10 @@ class Product{
     var id : Int = 0
     var price : Float = 0.0f
     var name : String = ""
-    var num : Int = 0
+    var num = 0
+    override fun toString(): String {
+        return "Product(id=$id, price=$price, name='$name', num=$num)"
+    }
+
 
 }

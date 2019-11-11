@@ -1,9 +1,12 @@
 package com.example.kttest
 
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +19,7 @@ class CartAdapter : ListAdapter<Product,CartAdapter.Holder>(CartDiff()){
         Log.d(TAG,"onCreateViewHolder")
         var databinding : ItemCartBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
             R.layout.item_cart,parent,false)
+
         return Holder(databinding)
     }
 
@@ -25,6 +29,12 @@ class CartAdapter : ListAdapter<Product,CartAdapter.Holder>(CartDiff()){
             with(holder){
                 itemCartBinding.name.text = it.name
                 itemCartBinding.price.text = it.price.toString()
+                itemCartBinding.root.setOnClickListener({
+                    Log.d(TAG,"onItemClick position: " + position)
+                    var bundle = Bundle()
+                    bundle.putInt("position",position)
+                    it.findNavController().navigate(R.id.action_to_fragmentB,bundle);
+                })
             }
         }
     }

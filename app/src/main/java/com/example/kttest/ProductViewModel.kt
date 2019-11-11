@@ -47,4 +47,11 @@ class ProductViewModel : ViewModel() {
         mProducts.value = products
     }
 
+    class ProdecViewmodelFactory : ViewModelProvider.NewInstanceFactory() {
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            return ProductViewModel() as T
+        }
+
+    }
+
 }
