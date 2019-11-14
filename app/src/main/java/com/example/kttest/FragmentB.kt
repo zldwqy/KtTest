@@ -32,6 +32,7 @@ class FragmentB :Fragment(){
 
         pos?.let {
             activity?.let {
+                //使用ViewModelProvider 替换 ViewModelProviders
                 val viewModel = ViewModelProvider(
                     it.viewModelStore,
                     ProductViewModel.ProdecViewmodelFactory()
@@ -47,5 +48,12 @@ class FragmentB :Fragment(){
         }
 
 
+    }
+
+
+    fun <T1, T2> ifNotNull(value1: T1?, value2: T2?, bothNotNull: (T1, T2) -> (Unit)) {
+        if (value1 != null && value2 != null) {
+            bothNotNull(value1, value2)
+        }
     }
 }
