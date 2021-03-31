@@ -26,7 +26,7 @@ class ProductViewModel : ViewModel() {
     fun  addProducts() : Boolean{
 
         if (mProducts.value == null) {
-            mProducts.value = arrayListOf()
+            mProducts.value = arrayListOf<Product>()
         }
 //        var products : MutableList<Product>  = mProducts.value!!
         val products = mProducts.value!!.toMutableList()

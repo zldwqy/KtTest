@@ -1,5 +1,7 @@
 package com.example.kttest.fortest
 
+import android.graphics.ColorSpace
+
 open class Employee(
     name: String, age: Int, salary: Float
 
@@ -38,7 +40,8 @@ fun main(args: Array<String>) {
     println(p.color)
 
     val user = User("zhanglei", 18)
-    println(user)
+    val copy = user.copy(name = "lisi")
+    println(copy)
 
     val programmer = Programmer("zhaolei", 19, 3000f)
     println(programmer)
@@ -46,6 +49,14 @@ fun main(args: Array<String>) {
     for ( x in 1 .. 10 step  2){
         println(x)
     }
+
+    println("red is ${Color.RED.rgb}")
+
+//    var a : String? = "hello"
+    var a : String? = null
+    var b = a?.length ?: 100
+    println("b is $b")
+
 }
 
 
@@ -53,6 +64,15 @@ fun main(args: Array<String>) {
 
 data class User(var name : String, var age : Int)
 
+enum class NetState{
+    CONNECTED,CONNECTING,DISCONNECT
+}
+
+enum class Color(val rgb: Int){
+    RED(0xFF000),
+    GREEN(0x00FF00),
+    BLUE(0x0000FF)
+}
 
 
 
