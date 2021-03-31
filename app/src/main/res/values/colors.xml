@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="wave_green">#E642FFBE</color>
+    <color name="wave_blue">#FF0087FF</color>
+    <color name="wave_pink">#CCD742FF</color>
+    <color name="wave_white">#FAFAFA</color>
 </resources>
